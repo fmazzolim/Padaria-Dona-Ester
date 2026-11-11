@@ -1,0 +1,366 @@
+/* Dona Ester Pães e Doces - tema escuro com as cores do logo e da faixa italiana */
+
+:root {
+  --preto: #000000;
+  --grafite: #141414;
+  --grafite-2: #1f1f1f;
+  --linha: #333333;
+  --branco: #ffffff;
+  --texto: #ececec;
+  --texto-suave: #b5b5b5;
+  --verde: #009246;
+  --verde-claro: #19b560;
+  --vermelho: #ce2b37;
+  --raio: 14px;
+  --fonte: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fonte-marca: "Dancing Script", "Brush Script MT", cursive;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background: var(--preto);
+  color: var(--texto);
+  font-family: var(--fonte);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--verde-claro);
+  outline-offset: 2px;
+}
+
+/* Topo */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--verde) 0 33.3%, var(--branco) 33.3% 66.6%, var(--vermelho) 66.6% 100%) 1;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.marca__logo { width: 44px; height: 44px; border-radius: 50%; }
+
+.marca__nome {
+  font-family: var(--fonte-marca);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--branco);
+  line-height: 1;
+}
+
+.topo__nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.topo__nav a { text-decoration: none; }
+.topo__nav a:hover { text-decoration: underline; }
+
+.topo__nav a:not(.topo__pedido) { display: none; }
+
+.topo__pedido {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  background: var(--verde);
+  color: var(--branco);
+  border-radius: 999px;
+}
+
+.contador {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  background: var(--branco);
+  color: var(--preto);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+@media (min-width: 700px) {
+  .topo { padding: 12px 32px; }
+  .topo__nav a:not(.topo__pedido) { display: inline; }
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  gap: 24px;
+  padding: 32px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero__selo {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  font-family: var(--fonte-marca);
+  font-size: clamp(2.2rem, 8vw, 3.6rem);
+  line-height: 1.1;
+  color: var(--branco);
+}
+
+.hero__sub { margin: 0 0 20px; color: var(--texto-suave); max-width: 46ch; }
+
+.hero__img {
+  width: 100%;
+  border-radius: var(--raio);
+  border: 1px solid var(--linha);
+}
+
+@media (min-width: 800px) {
+  .hero {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    padding: 56px 32px;
+    gap: 40px;
+  }
+}
+
+/* Blocos */
+.bloco {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 16px;
+}
+
+.bloco h2 {
+  margin: 0 0 16px;
+  font-family: var(--fonte-marca);
+  font-size: 2rem;
+  color: var(--branco);
+}
+
+.passos {
+  margin: 0 0 16px;
+  padding-left: 20px;
+  display: grid;
+  gap: 6px;
+}
+
+.aviso {
+  margin: 0;
+  padding: 12px 14px;
+  background: var(--grafite);
+  border-left: 4px solid var(--vermelho);
+  border-radius: 8px;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn--principal { background: var(--verde); color: var(--branco); }
+.btn--principal:hover { background: var(--verde-claro); }
+.btn--grande { width: 100%; min-height: 52px; font-size: 1.05rem; margin-top: 8px; }
+
+/* Cardápio */
+.categoria { margin-bottom: 28px; }
+
+.categoria h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--texto-suave);
+}
+
+.grade {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) { .grade { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .grade { grid-template-columns: repeat(3, 1fr); } }
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: var(--grafite);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+}
+
+.item__nome { margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--branco); }
+.item__preco { margin: 0; font-weight: 700; color: var(--verde-claro); font-size: 1.1rem; }
+.item__rodape { margin-top: auto; display: grid; gap: 8px; }
+
+select,
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  background: var(--grafite-2);
+  color: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  font: inherit;
+}
+
+select:focus,
+input:focus,
+textarea:focus { border-color: var(--verde-claro); }
+
+/* Carrinho */
+.carrinho-vazio { color: var(--texto-suave); margin: 0 0 20px; }
+
+.carrinho-lista { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 10px; }
+
+.carrinho-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px;
+  background: var(--grafite);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+}
+
+.carrinho-item__nome { font-weight: 700; color: var(--branco); }
+.carrinho-item__opcao { display: block; font-weight: 400; color: var(--texto-suave); font-size: 0.9rem; }
+.carrinho-item__subtotal { font-weight: 700; text-align: right; }
+
+.qtd { display: inline-flex; align-items: center; gap: 4px; }
+
+.qtd button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--linha);
+  background: var(--grafite-2);
+  color: var(--branco);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.qtd button:hover { border-color: var(--verde-claro); }
+.qtd output { min-width: 32px; text-align: center; font-weight: 700; }
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 24px;
+  padding: 14px;
+  background: var(--grafite);
+  border-radius: var(--raio);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.total small { display: block; font-weight: 400; color: var(--texto-suave); font-size: 0.8rem; }
+
+/* Formulário */
+fieldset {
+  margin: 0 0 12px;
+  padding: 16px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  display: grid;
+  gap: 6px;
+}
+
+legend { padding: 0 8px; font-weight: 700; color: var(--branco); }
+
+label { font-weight: 600; font-size: 0.95rem; margin-top: 8px; }
+
+.linha { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .linha { grid-template-columns: 1fr 1fr; } }
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  font-weight: 400;
+}
+
+.check input { width: 22px; height: 22px; margin-top: 2px; flex: none; accent-color: var(--verde); }
+
+.dica { margin: 0 0 6px; font-size: 0.9rem; color: var(--texto-suave); }
+
+.erro {
+  margin: 8px 0;
+  padding: 12px 14px;
+  background: #3a1014;
+  border: 1px solid var(--vermelho);
+  border-radius: 10px;
+  color: #ffd9dc;
+}
+
+/* Rodapé */
+.rodape {
+  margin-top: 24px;
+  padding: 28px 16px 40px;
+  text-align: center;
+  color: var(--texto-suave);
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--verde) 0 33.3%, var(--branco) 33.3% 66.6%, var(--vermelho) 66.6% 100%) 1;
+}
+
+.rodape p { margin: 4px 0; }
+
+.rodape__marca {
+  font-family: var(--fonte-marca);
+  font-size: 1.6rem;
+  color: var(--branco);
+}

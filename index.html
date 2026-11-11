@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dona Ester Pães e Doces | Encomendas em Registro/SP</title>
+  <meta name="description" content="Pães, panquecas, empadões, tortas, bolos e biscoitos caseiros feitos sob encomenda. Entrega em Registro/SP.">
+  <meta name="theme-color" content="#000000">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="marca" href="#inicio" aria-label="Dona Ester Pães e Doces, voltar ao início">
+      <img class="marca__logo" src="images/logo.jpg" alt="" width="44" height="44" onerror="this.remove()">
+      <span class="marca__nome">Dona Ester</span>
+    </a>
+    <nav class="topo__nav" aria-label="Principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#como-pedir">Como pedir</a>
+      <a class="topo__pedido" href="#pedido">Meu pedido <span id="contador" class="contador">0</span></a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+
+    <section class="hero">
+      <div class="hero__texto">
+        <p class="hero__selo">Pães e Doces</p>
+        <h1>Feito em casa, com carinho, sob encomenda.</h1>
+        <p class="hero__sub">Pães, panquecas, empadões, tortas, bolos e biscoitos. Encomende com 24 horas de antecedência e receba em Registro/SP.</p>
+        <a class="btn btn--principal" href="#cardapio">Ver cardápio</a>
+      </div>
+      <img class="hero__img" src="images/produtos.jpg" alt="Seleção de produtos da Dona Ester: biscoitos, tortas, pão, panqueca e bolo de chocolate" onerror="this.remove()">
+    </section>
+
+    <section id="como-pedir" class="bloco">
+      <h2>Como pedir</h2>
+      <ol class="passos">
+        <li><strong>Escolha</strong> os produtos no cardápio.</li>
+        <li><strong>Informe</strong> a data, o horário e o endereço em Registro/SP.</li>
+        <li><strong>Envie</strong> o pedido pelo WhatsApp e combine o pagamento por Pix.</li>
+      </ol>
+      <p class="aviso">Trabalhamos somente com encomendas feitas com pelo menos 24 horas de antecedência. Entregamos apenas em Registro/SP.</p>
+    </section>
+
+    <section id="cardapio" class="bloco">
+      <h2>Cardápio</h2>
+      <div id="cardapio-lista" aria-live="polite">
+        <noscript>Ative o JavaScript para ver o cardápio e fazer seu pedido.</noscript>
+      </div>
+    </section>
+
+    <section id="pedido" class="bloco">
+      <h2>Meu pedido</h2>
+
+      <div id="carrinho" aria-live="polite"></div>
+
+      <form id="form-pedido" novalidate>
+        <fieldset>
+          <legend>Entrega</legend>
+
+          <label for="nome">Seu nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" required>
+
+          <div class="linha">
+            <div>
+              <label for="data">Data da entrega</label>
+              <input id="data" name="data" type="date" required>
+            </div>
+            <div>
+              <label for="hora">Horário</label>
+              <input id="hora" name="hora" type="time" required>
+            </div>
+          </div>
+          <p class="dica">A data precisa ser pelo menos 24 horas depois de agora.</p>
+
+          <label for="rua">Rua e número</label>
+          <input id="rua" name="rua" type="text" autocomplete="street-address" required>
+
+          <div class="linha">
+            <div>
+              <label for="bairro">Bairro</label>
+              <input id="bairro" name="bairro" type="text" required>
+            </div>
+            <div>
+              <label for="complemento">Complemento (opcional)</label>
+              <input id="complemento" name="complemento" type="text">
+            </div>
+          </div>
+
+          <label class="check">
+            <input id="cidade-ok" type="checkbox" required>
+            <span>Confirmo que o endereço de entrega é em <strong>Registro/SP</strong>.</span>
+          </label>
+
+          <label for="obs">Observações (opcional)</label>
+          <textarea id="obs" name="obs" rows="3" placeholder="Ex.: sem cebola, entregar na portaria..."></textarea>
+        </fieldset>
+
+        <p class="dica">Pagamento por Pix, combinado na conversa do WhatsApp.</p>
+        <p id="erro" class="erro" role="alert" hidden></p>
+
+        <button class="btn btn--principal btn--grande" type="submit">Enviar pedido pelo WhatsApp</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p class="rodape__marca">Dona Ester Pães e Doces</p>
+    <p>Registro/SP &middot; Encomendas com 24 horas de antecedência &middot; Pix</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
